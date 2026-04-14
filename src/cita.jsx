@@ -1,6 +1,6 @@
-import react from 'react'
+import React from 'react'; 
 
-const Cita = ({cita}) => {    
+const Cita = ({ cita, eliminarCita }) => { 
     return (
         <div className="cita">
             <p>Mascota: {cita.nombre}</p>
@@ -8,7 +8,12 @@ const Cita = ({cita}) => {
             <p>Fecha: {cita.fecha}</p>
             <p>Hora: {cita.hora}</p>
             <p>Sintomas: {cita.sintomas}</p>
-            <button className="button elimnar u-full-width">Eliminar ×</button>
+            <button
+                className="button eliminar u-full-width"
+                onClick={() => eliminarCita(cita.id)}
+            >
+                Eliminar &times;
+            </button>
         </div>
     );
 };
